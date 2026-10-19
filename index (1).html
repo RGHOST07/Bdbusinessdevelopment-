@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BD · Business Development — Tu idea, hecha realidad</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F3F7FF;--surface:#fff;--text:#0B1F4B;--muted:#4A5B80;--blue:#1F5BFF;--blue-d:#1440C4;--sky:#DCE8FF;--sun:#FFC857;--on-blue:#fff;--border:#C9D8F5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#081230;--surface:#0F1D45;--text:#EAF0FF;--muted:#A9B8DA;--blue:#5B8CFF;--blue-d:#82A6FF;--sky:#16296A;--border:#24397A}}
+:root[data-theme="dark"]{--bg:#081230;--surface:#0F1D45;--text:#EAF0FF;--muted:#A9B8DA;--blue:#5B8CFF;--blue-d:#82A6FF;--sky:#16296A;--border:#24397A}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 "Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;margin:0}
+h1{font-size:clamp(2.4rem,8vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.lead{color:var(--muted);max-width:56ch;margin-top:14px}
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800}
+.mono{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--blue);color:var(--on-blue);font:800 1.05rem "Bricolage Grotesque",sans-serif;letter-spacing:-.04em}
+.nav a.link{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:500}
+.nav a.link:hover{color:var(--text)}
+@media(max-width:640px){.nav .link{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border:0;border-radius:999px;background:var(--blue);color:var(--on-blue);font:600 1rem "Figtree",sans-serif;text-decoration:none;cursor:pointer;transition:background .2s,transform .15s}
+.btn:hover{background:var(--blue-d)}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--text);border:2px solid var(--border)}
+.btn.ghost:hover{background:var(--sky)}
+/* hero */
+.hero{padding:56px 0 40px}
+.hero-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.3fr .8fr}}
+.hello{display:inline-block;background:var(--sun);color:#0B1F4B;font-weight:600;padding:6px 16px;border-radius:999px;margin-bottom:20px}
+.hero h1 span{display:block;color:var(--blue)}
+.hero .lead{font-size:1.15rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.logo-block{position:relative;aspect-ratio:1;max-width:380px;width:100%;margin:0 auto;border-radius:36px;background:var(--blue);display:grid;place-items:center;overflow:hidden;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.logo-block b{font:800 clamp(6rem,24vw,10.5rem)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.07em;color:#fff}
+.logo-block i{position:absolute;right:-40px;bottom:-40px;width:150px;height:150px;border-radius:50%;background:var(--sun)}
+.logo-block em{position:absolute;left:22px;bottom:20px;font:600 .95rem "Figtree",sans-serif;color:#DCE8FF;font-style:normal;max-width:16ch;line-height:1.3}
+@keyframes rise{from{opacity:0;transform:translateY(24px) rotate(-2deg)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.logo-block{animation:none}html{scroll-behavior:auto}.m,.fb{animation:none;opacity:1}.cl,.ad,.phone,.steam{animation:none}}
+.trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:36px;color:var(--muted);font-weight:500}
+.trust span::before{content:"✓ ";color:var(--blue);font-weight:800}
+.fig{position:absolute;left:16px;bottom:10px;width:100px;height:auto;animation:bob 2.4s ease-in-out infinite}
+.arm-w{transform-box:view-box;transform-origin:50px 46px;animation:wave .9s ease-in-out infinite alternate}
+@keyframes wave{from{transform:rotate(-22deg)}to{transform:rotate(22deg)}}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.scratch-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:860px){.scratch-grid{grid-template-columns:1.1fr .9fr}}
+.sc-list{list-style:none;padding:0;margin:18px 0 26px}
+.sc-list li{padding:4px 0 4px 28px;position:relative;color:var(--muted)}
+.sc-list li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:800}
+.scene{display:block;width:100%;max-width:420px;margin:0 auto;color:var(--text)}
+.s1,.s2{animation:bob 2.6s ease-in-out infinite}
+.s2{animation-delay:1.3s}
+.b1,.b2{transform-box:fill-box;transform-origin:center bottom;opacity:0;animation:pop 6s ease-in-out infinite}
+.b2{animation-delay:3s}
+@keyframes pop{0%,6%{opacity:0;transform:scale(.6)}14%,44%{opacity:1;transform:scale(1)}54%,100%{opacity:0;transform:scale(.9)}}
+.fb{position:absolute;z-index:2;max-width:62%;padding:8px 14px;border-radius:16px 16px 16px 4px;background:#fff;color:#0B1F4B;font:600 .85rem/1.25 "Figtree",sans-serif;animation:float 4s ease-in-out infinite}
+.fb1{top:16px;left:16px}
+.fb2{top:64px;right:16px;border-radius:16px 16px 4px 16px;background:var(--sun);animation-delay:1.2s}
+@keyframes float{50%{transform:translateY(-6px)}}
+.chat{display:flex;flex-direction:column;gap:12px;width:100%;max-width:440px;margin:0 auto;padding:20px;border-radius:28px;background:var(--surface);border:1px solid var(--border)}
+.m{max-width:88%;padding:10px 14px;border-radius:18px;font-size:.98rem;line-height:1.45;opacity:0;animation:msg 16s ease-in-out infinite both}
+.m small{display:block;font-weight:600;font-size:.78rem;opacity:.75;margin-bottom:2px}
+.m.you{align-self:flex-start;background:var(--sky);border-bottom-left-radius:4px}
+.m.me{align-self:flex-end;background:var(--blue);color:var(--on-blue);border-bottom-right-radius:4px}
+.m:nth-child(2){animation-delay:2.5s}.m:nth-child(3){animation-delay:5s}.m:nth-child(4){animation-delay:7.5s}
+@keyframes msg{0%{opacity:0;transform:translateY(12px)}4%,86%{opacity:1;transform:none}94%,100%{opacity:0}}
+.fb,.sb{transition:opacity .35s}
+.fb.out,.sb.out{opacity:0}
+.scene-wrap{position:relative;width:100%;max-width:440px;margin:0 auto;padding-top:124px}
+.sb{position:absolute;top:0;width:47%;height:108px;padding:10px 14px;border-radius:18px;font-size:.86rem;line-height:1.35;display:flex;align-items:center}
+.sb::after{content:"";position:absolute;top:100%;border-style:solid;border-width:10px 9px 0;border-color:var(--bb) transparent transparent}
+.sb1{--bb:var(--blue);background:var(--bb);color:var(--on-blue);left:0}
+.sb1::after{left:80px}
+.sb2{--bb:var(--sky);background:var(--bb);color:var(--text);right:0}
+.sb2::after{right:90px}
+.cl{animation:bob 3s ease-in-out infinite}
+.ad{animation:bob 3.4s ease-in-out infinite .6s}
+.phone{transform-box:view-box;transform-origin:114px 122px;animation:tilt 2.4s ease-in-out infinite alternate}
+@keyframes tilt{from{transform:rotate(-6deg)}to{transform:rotate(8deg)}}
+.steam{animation:steam 2.6s ease-in-out infinite}
+@keyframes steam{0%,100%{opacity:.1}50%{opacity:.8}}
+footer .foot{display:grid;gap:28px;width:100%}
+@media(min-width:760px){footer .foot{grid-template-columns:1.2fr 1fr}}
+.foot-brand{display:flex;gap:12px;align-items:center}
+.foot strong{color:var(--text);font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem}
+.foot p{margin:4px 0 0}
+.foot a{color:var(--blue);font-weight:600}
+.foot-copy{grid-column:1/-1;border-top:1px solid var(--border);padding-top:18px;font-size:.88rem}
+/* ideas */
+.ideas{background:var(--surface);border-block:1px solid var(--border)}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:32px}
+.chip{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:16px;border-radius:18px;background:var(--bg);border:2px solid var(--border);color:var(--text);font:inherit;cursor:pointer;transition:border-color .2s,background .2s}
+.chip:hover{border-color:var(--blue)}
+.chip[aria-pressed="true"]{border-color:var(--blue);background:var(--sky)}
+.chip .em{font-size:1.6rem;line-height:1}
+.chip strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem}
+.chip small{color:var(--muted);font-size:.9rem;line-height:1.4;display:block;margin-top:2px}
+.pick{margin-top:22px;min-height:1.6em;color:var(--muted)}
+.pick b{color:var(--blue)}
+/* steps */
+.steps{display:grid;gap:0;margin-top:32px;border-left:3px solid var(--blue);margin-left:14px}
+.step{padding:0 0 28px 28px;position:relative}
+.step::before{content:"";position:absolute;left:-11px;top:6px;width:19px;height:19px;border-radius:50%;background:var(--sun);border:3px solid var(--bg)}
+.step p{color:var(--muted);margin-top:6px;max-width:52ch}
+/* why */
+.why{display:grid;gap:28px;margin-top:32px}
+@media(min-width:760px){.why{grid-template-columns:1fr 1fr}}
+.why div{padding-top:14px;border-top:3px solid var(--blue)}
+.why p{color:var(--muted);margin-top:6px}
+/* booking */
+.book{background:var(--blue);color:#fff}
+.book h2,.book .lead{color:#fff}
+.book .lead{opacity:.9}
+.book-grid{display:grid;gap:36px}
+@media(min-width:900px){.book-grid{grid-template-columns:.8fr 1.2fr;align-items:start}}
+.card{background:var(--surface);color:var(--text);border-radius:28px;padding:26px}
+label{display:block;font-weight:600;margin:16px 0 6px}
+label:first-child{margin-top:0}
+input,select,textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:14px;border:2px solid var(--border);background:var(--bg);color:var(--text);font:inherit}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);outline:none}
+.two{display:grid;gap:0 14px}
+@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+.card .btn{width:100%;margin-top:22px}
+.note{font-size:.9rem;color:var(--muted);margin-top:12px}
+.ok{display:none;margin-top:16px;padding:14px 16px;border-radius:14px;background:var(--sky);font-weight:500}
+.ok.show{display:block}
+.mail{display:inline-block;margin-top:18px;font-weight:600;color:#fff}
+footer{padding:28px 0;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="BD, inicio"><span class="mono">BD</span><span>Business Development</span></a>
+    <nav><a class="link" href="#ideas">Qué crear</a><a class="link" href="#proceso">Cómo trabajamos</a><a class="btn" style="margin-left:18px;min-height:42px;padding:0 18px" href="#cita">Agendar cita</a></nav>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <span class="hello">¡Bienvenido, nos alegra que estés aquí!</span>
+    <h1>Usted lo idealiza.<span>Nosotros lo llevamos a cabo.</span></h1>
+    <p class="lead">Cuéntenos su idea, por pequeña o atrevida que sea. En una reunión sin costo la convertimos en un plan claro, y después en una página web o aplicación que sus clientes van a amar.</p>
+    <div class="cta-row"><a class="btn" href="#cita">Quiero mi reunión gratis</a><a class="btn ghost" href="#ideas">Ver qué podemos crear</a></div>
+    <div class="trust"><span>Primera reunión sin compromiso</span><span>Lenguaje claro, sin tecnicismos</span><span>Respuesta en menos de 24 horas</span></div>
+  </div>
+  <div class="logo-block" role="img" aria-label="Logo BD"><b>BD</b><i></i><em>Ideas que se vuelven negocio</em><span class="fb fb1 ta" aria-hidden="true">Quiero crear una app 💭</span><span class="fb fb2 tb" aria-hidden="true">¡Hagámoslo juntos! 🚀</span></div>
+</div></section>
+
+<section class="ideas" id="ideas"><div class="wrap">
+  <h2>¿Qué le gustaría crear?</h2>
+  <p class="lead">Toque las ideas que le emocionen. Se agregan solas a su solicitud de cita, y usted puede sumar las suyas.</p>
+  <div class="chips" id="chips"></div>
+  <p class="pick" id="pick">Aún no ha elegido nada. ¡Todas las ideas son bienvenidas!</p>
+  <a class="btn" href="#cita">Hablemos de mi idea</a>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Todo lo que su negocio necesita para brillar</h2>
+  <p class="lead">No solo creamos páginas y aplicaciones. También ayudamos a que su negocio se vea profesional y llegue a más gente.</p>
+  <div class="why">
+    <div><h3>📷 Fotografía de negocios</h3><p>Fotos profesionales de su local, sus productos y su equipo, listas para su página y sus redes.</p></div>
+    <div><h3>📣 Creación de anuncios</h3><p>Diseñamos anuncios llamativos y le ayudamos a publicarlos para que más personas conozcan su negocio.</p></div>
+    <div><h3>🎬 Video de su negocio</h3><p>Un video grabado por un camarógrafo profesional que cuenta la historia de su emprendimiento.</p></div>
+    <div><h3>📱 Tienda en línea</h3><p>Por ejemplo, para vender celulares: un catálogo bonito donde sus clientes eligen y le escriben para comprar.</p></div>
+  </div>
+  <div class="cta-row"><a class="btn" href="#cita">Quiero estos servicios</a></div>
+</div></section>
+
+<section class="scratch"><div class="wrap scratch-grid">
+  <div>
+    <h2>¿Sin idea todavía? ¡Perfecto, empecemos desde cero!</h2>
+    <p class="lead">No necesita llegar con todo resuelto. Nos sentamos con usted, hacemos las preguntas correctas, le mostramos ejemplos y armamos juntos su página o aplicación desde una hoja en blanco.</p>
+    <ul class="sc-list"><li>Le ayudamos a descubrir qué ofrecer y a quién.</li><li>Le proponemos nombre, colores y secciones.</li><li>Usted aprueba cada paso antes de avanzar.</li></ul>
+    <button class="btn" id="scratch" type="button">Quiero empezar desde cero</button>
+  </div>
+  <div class="scene-wrap">
+    <div class="sb sb1 ta" aria-hidden="true">Quiero crear una app, pero no sé de qué 🤔</div>
+    <div class="sb sb2 tb" aria-hidden="true">Tranquilo, pongamos ideas juntos. ¿Tiene algún negocio? 💡</div>
+    <svg class="scene" viewBox="0 0 420 260" role="img" aria-label="Un cliente con su celular conversa con un asesor sentado en su escritorio">
+      <path d="M10 240H410" stroke="var(--border)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <g class="cl">
+        <rect x="82" y="170" width="12" height="68" rx="6" fill="#2F4A9E"/><rect x="98" y="170" width="12" height="68" rx="6" fill="#2F4A9E"/>
+        <path d="M78 122L70 160" stroke="#1F5BFF" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <rect x="74" y="108" width="44" height="70" rx="18" fill="#1F5BFF"/>
+        <circle cx="96" cy="88" r="17" fill="#F2B38C"/>
+        <path d="M79 86Q80 68 97 68Q113 68 113 84Q104 76 92 78Q84 80 79 86Z" fill="#2B1B17"/>
+        <circle cx="91" cy="89" r="1.8" fill="#0B1F4B"/><circle cx="102" cy="89" r="1.8" fill="#0B1F4B"/>
+        <path d="M90 96Q96 101 102 96" stroke="#0B1F4B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <g class="phone"><path d="M114 122L138 132" stroke="#1F5BFF" stroke-width="11" stroke-linecap="round" fill="none"/><circle cx="140" cy="132" r="6" fill="#F2B38C"/><rect x="138" y="112" width="12" height="22" rx="3" fill="#FFC857" transform="rotate(8 144 123)"/></g>
+      </g>
+      <rect x="285" y="98" width="52" height="80" rx="16" fill="#6B84C9"/>
+      <g class="ad">
+        <rect x="290" y="114" width="44" height="64" rx="16" fill="#FFC857"/>
+        <circle cx="312" cy="92" r="17" fill="#8D5524"/>
+        <path d="M295 90Q296 72 313 72Q329 72 329 88Q320 80 308 82Q300 84 295 90Z" fill="#1A1A1A"/>
+        <circle cx="307" cy="93" r="1.8" fill="#0B1F4B"/><circle cx="318" cy="93" r="1.8" fill="#0B1F4B"/>
+        <path d="M306 100Q312 105 318 100" stroke="#0B1F4B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      </g>
+      <rect x="268" y="136" width="86" height="36" rx="5" fill="#DCE8FF" stroke="#1F5BFF" stroke-width="3"/>
+      <text x="311" y="161" text-anchor="middle" font-size="18" font-weight="800" fill="#1F5BFF" font-family="Bricolage Grotesque,sans-serif">BD</text>
+      <rect x="205" y="178" width="200" height="10" rx="5" fill="#C58B4F"/>
+      <rect x="215" y="188" width="8" height="52" fill="#C58B4F"/><rect x="387" y="188" width="8" height="52" fill="#C58B4F"/>
+      <rect x="376" y="160" width="14" height="18" rx="3" fill="#fff" stroke="#C9D8F5" stroke-width="2"/>
+      <path class="steam" d="M380 154Q377 148 380 142M386 154Q383 148 386 142" stroke="#8FA3D6" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+  </div>
+</div></section>
+
+<section id="proceso"><div class="wrap">
+  <h2>Así de fácil es empezar</h2>
+  <div class="steps">
+    <div class="step"><h3>Nos cuenta su idea</h3><p>Llene el formulario o escríbanos. No necesita saber de tecnología, solo qué sueña lograr.</p></div>
+    <div class="step"><h3>Nos reunimos</h3><p>Una conversación amable por videollamada, llamada o mensaje, donde le hacemos las preguntas que ordenan sus ideas.</p></div>
+    <div class="step"><h3>Le mostramos el plan</h3><p>Recibe una propuesta clara con diseño, funciones y tiempos, antes de decidir nada.</p></div>
+    <div class="step"><h3>Lo construimos juntos</h3><p>Usted ve el avance, opina y ajusta. Al final, su proyecto en línea y listo para recibir clientes.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Por qué nos eligen</h2>
+  <div class="why">
+    <div><h3>Su idea siempre es lo primero</h3><p>Escuchamos antes de proponer. Cada proyecto se diseña a la medida de su negocio.</p></div>
+    <div><h3>Diseño bonito que vende</h3><p>Páginas atractivas, rápidas y pensadas para que sus visitantes se conviertan en clientes.</p></div>
+    <div><h3>Trato cercano y humano</h3><p>Una persona real le acompaña de principio a fin y responde cada duda.</p></div>
+    <div><h3>Crece a su ritmo</h3><p>Empiece con lo esencial y agregue funciones cuando su negocio lo pida.</p></div>
+  </div>
+</div></section>
+
+<section class="book" id="cita"><div class="wrap book-grid">
+  <div>
+    <h2>Agende su cita gratuita</h2>
+    <p class="lead">Elija cuándo y cómo prefiere conversar. Su idea merece una buena primera conversación, y es sin compromiso.</p>
+    <a class="mail" href="mailto:businessdevelopmentbd@gmail.com">businessdevelopmentbd@gmail.com</a>
+  </div>
+  <div class="card">
+    <form id="f" novalidate>
+      <label for="n">Su nombre</label>
+      <input id="n" autocomplete="name" placeholder="¿Cómo le gusta que le llamemos?" required>
+      <div class="two">
+        <div><label for="e">Su correo</label><input id="e" type="email" autocomplete="email" placeholder="usted@correo.com" required></div>
+        <div><label for="t">Teléfono o WhatsApp</label><input id="t" type="tel" autocomplete="tel" placeholder="Opcional"></div>
+      </div>
+      <div class="two">
+        <div><label for="d">Día preferido</label><input id="d" type="date"></div>
+        <div><label for="h">Hora preferida</label><select id="h"><option>Mañana</option><option>Mediodía</option><option>Tarde</option><option>Noche</option></select></div>
+      </div>
+      <label for="m">¿Cómo prefiere la reunión?</label>
+      <select id="m"><option>Videollamada</option><option>Llamada telefónica</option><option>WhatsApp</option><option>Presencial</option></select>
+      <label for="i">Cuéntenos su idea</label>
+      <textarea id="i" placeholder="Escriba aquí lo que sueña crear. Si aún no lo tiene claro, ¡también nos sirve!"></textarea>
+      <button class="btn" type="submit">Enviar mi solicitud</button>
+      <p class="note">Se abrirá su correo con la solicitud lista para enviar a nuestro equipo.</p>
+      <div class="ok" id="ok" role="status">¡Gracias! Si su correo no se abrió, copie su solicitud y escríbanos a businessdevelopmentbd@gmail.com.
+        <br><button type="button" class="btn ghost" id="copy" style="margin-top:12px;min-height:42px">Copiar solicitud</button></div>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div class="foot">
+  <div class="foot-brand"><span class="mono">BD</span><div><strong>BD · Business Development</strong><p>Tu idea, hecha realidad.</p></div></div>
+  <div><strong>CEO y fundador:</strong><p>Rodrigo Chacón Barquero</p><p><a href="mailto:businessdevelopmentbd@gmail.com">businessdevelopmentbd@gmail.com</a></p></div>
+  <p class="foot-copy">© <span id="yr">2026</span> BD · Business Development. Todos los derechos reservados.</p>
+</div></div></footer>
+
+<script>
+var IDEAS=[
+["🌐","Página web de negocio","Presente su marca y consiga clientes"],
+["🛒","Tienda en línea","Venda sus productos las 24 horas"],
+["📱","Aplicación móvil","Su idea en el bolsillo de sus clientes"],
+["📅","Sistema de citas","Reservas automáticas sin llamadas"],
+["📊","Panel de control","Vea sus números en un solo lugar"],
+["🎓","Plataforma de cursos","Enseñe y cobre por su conocimiento"],
+["🍽️","Menú y pedidos","Para restaurantes y cafeterías"],
+["🏠","Inmobiliaria en línea","Muestre propiedades con filtros"],
+["🤝","Comunidad o membresía","Reúna a su gente en un solo sitio"],
+["🧾","Facturas y cotizaciones","Cotice y cobre más rápido"],
+["🎨","Portafolio creativo","Muestre su talento con estilo"],
+["📷","Fotografía de negocios","Fotos profesionales de su local y productos"],
+["📣","Anuncios para su negocio","Los diseñamos y le ayudamos a publicarlos"],
+["🎬","Video de su negocio","Grabado por un camarógrafo profesional"],
+["💡","Una idea nueva","Aún sin nombre, la descubrimos juntos"]];
+var sel=[],box=document.getElementById("chips"),pick=document.getElementById("pick");
+IDEAS.forEach(function(x,k){
+  var b=document.createElement("button");b.type="button";b.className="chip";b.setAttribute("aria-pressed","false");
+  b.innerHTML='<span class="em">'+x[0]+'</span><span><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span>';
+  b.onclick=function(){
+    var on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on);
+    if(on)sel.push(x[1]);else sel=sel.filter(function(s){return s!==x[1]});
+    pick.innerHTML=sel.length?"Le interesa: <b>"+sel.join(", ")+"</b>":"Aún no ha elegido nada. ¡Todas las ideas son bienvenidas!";
+  };
+  box.appendChild(b);
+});
+document.getElementById("scratch").addEventListener("click",function(){
+  var s="Empezar desde cero";
+  if(sel.indexOf(s)<0)sel.push(s);
+  pick.innerHTML="Le interesa: <b>"+sel.join(", ")+"</b>";
+  var t=document.getElementById("i");
+  if(!t.value.trim())t.value="Aún no tengo una idea clara y quiero empezar desde cero con ustedes.";
+  try{document.getElementById("cita").scrollIntoView({behavior:"smooth"})}catch(e){}
+});
+var S=[["Quiero crear una app 💭","¡Hagámoslo juntos! 🚀"],["Vendo celulares 📱","Hagamos su app de pedidos 📲"],["Tengo una constructora 🏗️","Controlemos planillas 🧾"],["Tengo un restaurante 🍽️","Menú digital y pedidos 📋"],["Doy clases y cursos 🎓","Clases y pagos en línea 💻"],["Tengo una barbería 💈","Citas con recordatorios ⏰"],["Vendo ropa en Instagram 👗","Tienda en línea 🛍️"],["Tengo una clínica 🩺","Citas y expedientes 📅"],["Necesito fotos y video 🎬","Tenemos camarógrafo 🎥"],["No tengo ninguna idea 🤔","Empecemos desde cero 💙"]];
+var L=[["Quiero crear una app, pero no sé de qué 🤔","Tranquilo, pongamos ideas juntos. ¿Tiene algún negocio? 💡"],["Sí, vendo celulares 📱","Una app de pedidos que le lleguen directo a su teléfono 📲"],["Tengo una constructora 🏗️","Una app para controlar planillas y gastos de materiales 🧾"],["Tengo un restaurante 🍽️","Un menú digital con pedidos y reservas en línea 📋"],["Doy clases y cursos 🎓","Una app para inscripciones, pagos y clases en línea 💻"],["Tengo una barbería 💈","Una app de citas con recordatorios para sus clientes ⏰"],["Vendo ropa por Instagram 👗","Una tienda en línea con catálogo y pedidos por WhatsApp 🛍️"],["Tengo una clínica 🩺","Una app para agendar citas y organizar a sus pacientes 📅"],["Necesito fotos y un video de mi negocio 📷","Nuestro camarógrafo lo graba y le hacemos sus anuncios 🎥"],["No tengo ninguna idea 🤔","Empecemos desde cero, ¡es nuestra especialidad! 💙"]];
+var ta=[].slice.call(document.querySelectorAll(".ta")),tb=[].slice.call(document.querySelectorAll(".tb")),ti=0;
+function fade(l,on){l.forEach(function(e){e.classList.toggle("out",on)})}
+function put(l,k){l.forEach(function(e){e.textContent=(e.classList.contains("sb")?L:S)[ti][k]})}
+setInterval(function(){
+  ti=(ti+1)%S.length;fade(ta,true);fade(tb,true);
+  setTimeout(function(){put(ta,0);fade(ta,false)},450);
+  setTimeout(function(){put(tb,1);fade(tb,false)},2300);
+},6500);
+document.getElementById("yr").textContent=new Date().getFullYear();
+function v(id){return document.getElementById(id).value.trim()}
+function build(){
+  return "Hola, equipo BD. Quisiera agendar una reunión.\n\nNombre: "+v("n")+"\nCorreo: "+v("e")+"\nTeléfono: "+(v("t")||"No indicado")+
+  "\nDía preferido: "+(v("d")||"Cualquiera")+"\nHora preferida: "+v("h")+"\nModalidad: "+v("m")+
+  "\nMe interesa: "+(sel.length?sel.join(", "):"Por definir")+"\n\nMi idea:\n"+(v("i")||"Me gustaría conversarla con ustedes.");
+}
+document.getElementById("f").addEventListener("submit",function(ev){
+  ev.preventDefault();
+  if(!v("n")||!/^\S+@\S+\.\S+$/.test(v("e"))){alert("Por favor escriba su nombre y un correo válido para poder responderle.");return}
+  document.getElementById("ok").classList.add("show");
+  var url="mailto:businessdevelopmentbd@gmail.com?subject="+encodeURIComponent("Solicitud de cita · "+v("n"))+"&body="+encodeURIComponent(build());
+  try{window.open(url,"_top")}catch(e){}
+});
+document.getElementById("copy").onclick=function(){
+  var t=build();
+  try{navigator.clipboard.writeText(t).then(function(){document.getElementById("copy").textContent="¡Copiado!"})}catch(e){window.prompt("Copie su solicitud:",t)}
+};
+</script>
+</body>
+</html>
